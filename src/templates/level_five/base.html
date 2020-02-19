@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="{% url 'level_five:index' %}">Django</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="{% url 'level_five:register' %}">Register</a></li>
+
+                {% if the_user.is_authenticated %}
+                    <li><a href="{% url 'level_five:logout' %}">LogOut</a></li>
+                {% else %}
+                    <li><a href="{% url 'level_five:login' %}">LogIn</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

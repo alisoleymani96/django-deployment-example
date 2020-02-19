@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+    <link rel="stylesheet" href="{% static 'first_app/css/main.css' %}">
+</head>
+<body>
+    <h1>Access record information will be appear here</h1>
+    <div>
+    <table>
+        <thead>
+            <th>The page name</th>
+            <th>Date</th>
+        </thead>
+        {% if AccessRecords %}
+            {% for record in AccessRecords %}
+                <tr>
+                    <td>{{record.name}}</td>
+                    <td>{{record.date}}</td>
+                </tr>
+            {% endfor %}
+    </table>
+        {% else %}
+            <p>NO ACCESS RECORD FOUND!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

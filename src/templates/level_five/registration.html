@@ -1,0 +1,18 @@
+{% extends "level_five/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% if registered %}
+        <h3>Thank you for your Registration</h3>
+    {% else %}
+        <h1>Register Here</h1>
+        <h3>Fill out the form</h3>
+
+        <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            {{user_form.as_p}}
+            {{profile_form.as_p}}
+            <button type="submit" value="Register">Register</button>
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="navbar-brand"><a href="#">BRAND</a></li>
+                <li class="navbar-light"><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li class="navbar-light"><a href="{% url 'basic_app:other' %}">Other</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

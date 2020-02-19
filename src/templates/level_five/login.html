@@ -1,0 +1,16 @@
+{% extends "level_five/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Please LogIn</h1>
+<form method="post" action="{% url 'level_five:login' %}">
+    {% csrf_token %}
+    <label for="the_username" >Username:</label>
+    <input type="text" id="the_username" placeholder="UserName" name="username"><br><br>
+
+    <label for="the_password">Password:</label>
+    <input type="password" id="the_password" name="password"><br><br>
+
+    <input type="submit" value="Login">
+</form>
+{% endblock %}
